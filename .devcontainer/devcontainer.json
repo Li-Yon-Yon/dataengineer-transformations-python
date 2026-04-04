@@ -8,10 +8,11 @@
     },
     "ghcr.io/devcontainers/features/python:1": {
       "version": "3.12" 
-    },
-    "ghcr.io/devcontainers-extra/features/poetry:2": {
-      "version": "latest"
     }
+    //,
+    //"ghcr.io/devcontainers-extra/features/poetry:2": {
+    //  "version": "latest"
+    //}
   },
   "containerEnv": {
     "PYTHONUNBUFFERED": "1"
