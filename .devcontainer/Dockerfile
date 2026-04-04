@@ -1,8 +1,13 @@
 FROM mcr.microsoft.com/devcontainers/base:1-debian
 
-# Install Java 17 (Microsoft Distribution) and Poetry manually
+# Install Java, Poetry, and Core Utils
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends curl ca-certificates gnupg \
+    && apt-get -y install --no-install-recommends \
+        curl \
+        ca-certificates \
+        gnupg \
+        pipx \
+        coreutils \
     && mkdir -p /etc/apt/keyrings \
     && curl -sLS https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /etc/apt/keyrings/microsoft.gpg \
     && chmod go+r /etc/apt/keyrings/microsoft.gpg \
@@ -11,5 +16,5 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install msopenjdk-17 \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
-# Install Poetry globally using pipx
-RUN pipx install poetry
+# Install Poetry
+RUN pipx install poetry --include-deps
