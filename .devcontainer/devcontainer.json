@@ -5,12 +5,11 @@
   },
   "features": {
     "ghcr.io/devcontainers/features/python:1": {
-      "version": "3.12" 
+      "version": "3.13" 
     }
   },
   "containerEnv": {
-    "PYTHONUNBUFFERED": "1",
-    "PATH": "/usr/local/bin:/usr/bin:/bin:/root/.local/bin"
+    "PYTHONUNBUFFERED": "1"
   },
   "postCreateCommand": "poetry install",
   "customizations": {
@@ -22,5 +21,6 @@
         "ms-toolsai.jupyter"
       ]
     }
-  }
+  },
+  "remoteUser": "vscode"
 }
