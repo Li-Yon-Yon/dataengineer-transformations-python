@@ -1,18 +1,12 @@
 {
   "name": "Transformation - Python",
-  "image": "mcr.microsoft.com/devcontainers/base:1-debian",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "features": {
-    "ghcr.io/devcontainers/features/java:1": {
-      "version": "17",
-      "jdkDistro": "ms"
-    },
     "ghcr.io/devcontainers/features/python:1": {
-      "version": "3.12" 
+      "version": "3.12"
     }
-    //,
-    //"ghcr.io/devcontainers-extra/features/poetry:2": {
-    //  "version": "latest"
-    //}
   },
   "containerEnv": {
     "PYTHONUNBUFFERED": "1"
@@ -25,11 +19,7 @@
         "ms-python.vscode-pylance",
         "charliermarsh.ruff",
         "ms-toolsai.jupyter"
-      ],
-      "settings": {
-        "python.testing.pytestEnabled": true,
-        "python.testing.pytestArgs": ["tests"]
-      }
+      ]
     }
   }
 }
