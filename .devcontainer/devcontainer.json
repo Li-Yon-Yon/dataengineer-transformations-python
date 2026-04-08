@@ -1,24 +1,16 @@
 {
   "name": "Transformation - Python",
-  "image": "mcr.microsoft.com/devcontainers/base:1-debian",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "features": {
-    "ghcr.io/devcontainers/features/java:1": {
-      "version": "17.0.17-ms",
-      "jdkDistro": "ms",
-      "gradleVersion": "latest",
-      "mavenVersion": "latest",
-      "antVersion": "latest",
-      "groovyVersion": "latest"
-    },
     "ghcr.io/devcontainers/features/python:1": {
-      "version": "3.13"
-    },
-    "ghcr.io/devcontainers-extra/features/poetry:2": {
-      "version": "latest"
+      "version": "3.13" 
     }
   },
   "containerEnv": {
-    "PYTHONUNBUFFERED": "1"
+    "PYTHONUNBUFFERED": "1",
+    "JAVA_HOME": "/usr/lib/jvm/msopenjdk-17-amd64"
   },
   "postCreateCommand": "poetry install",
   "customizations": {
@@ -28,11 +20,8 @@
         "ms-python.vscode-pylance",
         "charliermarsh.ruff",
         "ms-toolsai.jupyter"
-      ],
-      "settings": {
-        "python.testing.pytestEnabled": true,
-        "python.testing.pytestArgs": ["tests"]
-      }
+      ]
     }
-  }
+  },
+  "remoteUser": "vscode"
 }
